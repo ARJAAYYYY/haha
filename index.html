@@ -19,6 +19,73 @@
             padding: 20px;
         }
 
+        /* Music Controls at Top */
+        .top-music-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 253, 249, 0.95);
+            padding: 15px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .music-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #A267AC, #FBC4AB);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .music-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(162, 103, 172, 0.4);
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: #ddd;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #A267AC;
+            cursor: pointer;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #A267AC;
+            cursor: pointer;
+            border: none;
+        }
+
+        .volume-label {
+            font-size: 16px;
+            color: #A267AC;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -158,7 +225,7 @@
             display: block;
         }
         .custom-size {
-            height: 250px; /* Change this value as needed */
+            height: 250px; 
             width: 100%;
             object-fit: cover;
             display: block;
@@ -168,6 +235,19 @@
             .container {
                 padding: 30px 20px;
                 margin: 10px;
+            }
+            
+            .top-music-controls {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .volume-slider {
+                width: 60px;
             }
             
             .edit-mode {
@@ -181,6 +261,13 @@
     </style>
 </head>
 <body>
+
+    <div class="top-music-controls">
+        <button class="music-btn" id="musicToggle">🎵 Play Music</button>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="30" title="Volume Control" aria-label="Volume Control">
+        <span class="volume-label">🔊</span>
+    </div>
+
     <div class="container">
         <div class="letterhead">
             <div class="sender-name">Jacob</div>
@@ -190,23 +277,20 @@
 
         <div class="letter-body">
             <div class="paragraph">
-              I know this is so extra but yeah HAHAHA. I'm writing this letter to thank you, for the messages you send me on new years, christmas, and birthdays. Your messages has a big impact on me accomplishing these achievements. I'm so thankful that you are still there looking out for me and encouraging me. I know we should not do this HAHAHAHA. But there is a part of me that needs to thank you and also want to make you proud(???????). I wish you are still here enjoying my achievements (YAN ANG SASABIHIN KO KUNG TANGA AKO PERO SASAMA KO PA DIN).
-            </div>
+I know this is super extra but here I am writing you a letter. Play the music pinaghirapan ko yan HAHAHA eme. I just wanted to say thank you. For every message you sent me during New Year’s, Christmas, and birthdays... those simple words meant a lot more than you probably realized. They played a huge part in helping me push through and accomplish the things I’ve achieved.            </div>
 
             <div class="paragraph">
-                Binasa ko ule yung message mo sakin, last chat natin (I promise to myself when Im graduating Ill check our convo and see kung gaano ako ka immature). And I realize the reply I made is made of anger and love for you. BAKIT KO BA TO GINAGAWA TANGINA. And also yung mga away natin. Grabe ang immature kong tao and Im sorry abt that, nakakahiya kung pano ako makipag talo sayo. Toxic ko ampota AHHASHDJASHDJAJHSD. But you know, Im proudly say na di na ko ganon. I'm very changed person na HASDHAJJSD.
-            </div>
+Tbh, I still carry a deep sense of guilt and shame for everything I’ve done to you. It haunts me — every second, every quiet moment. If I could reach up and rip the moon from the sky and lay it at your feet just to undo what I did, I would. Hurting you was like stabbing my own heart. The guilt? It’s crushing. It’s hard to breathe sometimes thinking of how I hurt you. And knowing I caused you pain… it breaks me. If I could trade everything for a chance to take it back, I would. No questions asked.            </div>
 
             <div class="paragraph">
-                Tbh, I am deeply ashamed and disgusted with myself sa nagawa ko sayo. It haunts me every second, every breath, every quiet moment. If it were possible to reach up and rip the moon from the sky, I swear I would do it without hesitation and lay it at your feet just to begin making things right. Hurting you has been like driving a knife into my own chest. The guilt is suffocating. Squeezing tighter every time I think about how I made you feel. I never wanted to be the source of your pain. And knowing that I am. It breaks me. I'd trade anything, everything, for the chance to take it back.
-            </div>
+Thank you for still looking out for me, for cheering me on even from afar. I know we’re not supposed to be doing this  HAHAHA  but a part of me really needs to say thank you, and maybe even admit that I want to make you proud somehow            </div>
 
             <div class="paragraph">
-                Nung nakita ko kayo may part of me na Im so happy for you and my prayers kinda worked. Seeing you healed, smiled, the smile I fell in love with(PANIS). I want to talk to you that day. REALLY REALLY WANT TO TALK TO YOUU NOT AS A EX "LOVER" BUT AS A FRIEND. I want to know kung kamusta ka na, ano na update sayo. Di kita agad namukaan kase wala ako salamin that time and naiwan ko sa apartment ko HUHU.
+Sometimes, when I’m struggling with school or just life in general, I find myself reading your old tweets years ago (yes I was there reading your tweets bago mo pa idelete.) They never fail to make me laugh, remind me that someone out there once cared enough to share something real, and teach me the lessons I need to hold onto. It’s a strange comfort but a real one.            <div class="paragraph">
             </div>
-
+   
             <div class="paragraph">
-                The pictures you see are not me bragging about it, I know its not a lot of achievements but im proudly showing you this. I'm showing this to you for you to know how much your words have so much impact on me. My achievement is your achievement also. I'm so thankful nichole. Really thankful. You are one of a kind nichole, you changed me, not as a bad person but a better person. Those bati help me alot. Tbh it sounds cringey but your messages are my therapy/encouragement to help me to keep goingg, and nakakacomfort siya. I hope you are doing well also nichole. All those years na cut off tayo and were still here, stuck. Still twtting HAHAHA.
+                The pictures you see are not me bragging about it,  I know they’re not great accomplishments, but I’m sharing them because I want you to know that your words made a difference. My wins are yours, too. You’re part of why I got here. I’m incredibly thankful, Nichole. You are truly one of a kind. You helped change me — not into a worse version, but into a better one. Your simple greetings and messages? They meant the world. Cringe as it may sound, they were my therapy. My encouragement. My comfort.I hope you're doing well, Nichole. Despite the years of silence, look at us  still here, still stuck, still tweeting HAHAHA. But seriously, thank you for everything. Always.
             </div>
         </div>
 
@@ -226,14 +310,92 @@
         </div>
 
         <div class="closing">
-            <div class="closing-phrase">I have one last request, and it’s completely up to you. I’ll be attending my Baccalaureate Mass on August 1. I know I probably shouldn’t be asking this, but you’ve had a meaningful impact on me throughout college through your messages and tweets, even from a distance.
+            <div class="closing-phrase">I have one last request, and it's completely up to you. I'll be attending my Baccalaureate Mass on August 1. I know I probably shouldn't be asking this, but you've had a meaningful impact on me throughout college through your messages and tweets, even from a distance.
 
-I just want to receive the toga and quietly thank you in person. If you want to come, please reply to my tweet, but if not, no need to respond. I’ll wait until the last day of this month, then I’ll leave it at that.
+I just want to receive the toga and quietly thank you in person. If you want to come, please reply to my tweet, but if not, no need to respond. I'll wait until the last day of this month, then I'll leave it at that.
 
 I just wanted to take this chance to tell you how grateful I am.
 
 Thank you so much, Nichole. Wishing you all the best in life.</div>
         </div>
     </div>
+
+
+    <!-- Background Music (fallback) -->
+    <audio id="backgroundMusic" loop autoplay style="display: none;">
+        <source src="music/SpotiDownloader.com - Take A Chance With Me - NIKI.mp3" type="audio/mpeg">
+        <source src="music/background.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const musicToggle = document.getElementById('musicToggle');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const volumeSlider = document.getElementById('volumeSlider');
+        
+        let isPlaying = false;
+        
+        // Set initial volume
+        backgroundMusic.volume = 0.3;
+        
+        // Auto-play attempt when page loads
+        window.addEventListener('load', function() {
+            backgroundMusic.play().then(function() {
+                // Auto-play successful
+                isPlaying = true;
+                musicToggle.innerHTML = '⏸️ Pause Music';
+                musicToggle.style.background = 'linear-gradient(45deg, #FBC4AB, #A267AC)';
+            }).catch(function(error) {
+                // Auto-play prevented by browser
+                console.log('Auto-play prevented:', error);
+                isPlaying = false;
+                musicToggle.innerHTML = '🎵 Click to Play Music';
+            });
+        });
+
+        // Try to play music on any user interaction if auto-play failed
+        document.body.addEventListener('click', function tryPlay() {
+            if (!isPlaying) {
+                backgroundMusic.play().then(function() {
+                    isPlaying = true;
+                    musicToggle.innerHTML = '⏸️ Pause Music';
+                    musicToggle.style.background = 'linear-gradient(45deg, #FBC4AB, #A267AC)';
+                    // Remove this listener after successful play
+                    document.body.removeEventListener('click', tryPlay);
+                }).catch(function(error) {
+                    console.log('Play failed:', error);
+                });
+            }
+        });
+        
+        // Toggle music play/pause
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                this.innerHTML = '🎵 Play Music';
+                this.style.background = 'linear-gradient(45deg, #A267AC, #FBC4AB)';
+            } else {
+                backgroundMusic.play().catch(function(error) {
+                    console.log('Auto-play prevented:', error);
+                    alert('Please click to start the music');
+                });
+                this.innerHTML = '⏸️ Pause Music';
+                this.style.background = 'linear-gradient(45deg, #FBC4AB, #A267AC)';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Volume control
+        volumeSlider.addEventListener('input', function() {
+            backgroundMusic.volume = this.value / 100;
+        });
+        
+        // Handle music end (though it's looped)
+        backgroundMusic.addEventListener('ended', function() {
+            isPlaying = false;
+            musicToggle.innerHTML = '🎵 Play Music';
+            musicToggle.style.background = 'linear-gradient(45deg, #A267AC, #FBC4AB)';
+        });
+    </script>
 </body>
 </html>
